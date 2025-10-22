@@ -1,0 +1,48 @@
+2025-10-22 21:28:05,943 - INFO - Starting AI Assistant application verification
+2025-10-22 21:28:05,944 - INFO - Python version 3.12.4 is compatible
+2025-10-22 21:28:05,944 - INFO - Found required file: main.py
+2025-10-22 21:28:05,945 - INFO - Found required file: requirements.txt
+2025-10-22 21:28:05,945 - INFO - Found required file: README.md
+2025-10-22 21:28:05,945 - INFO - Found required file: .env
+2025-10-22 21:28:05,945 - INFO - Found required file: test_app.py
+2025-10-22 21:28:05,946 - INFO - Found required file: azure-deploy.yaml
+2025-10-22 21:28:05,946 - INFO - Found required file: Dockerfile
+2025-10-22 21:28:05,947 - INFO - Found required file: .dockerignore
+2025-10-22 21:28:05,947 - INFO - Found required file: run_app.py
+2025-10-22 21:28:05,947 - INFO - Found required file: verify_setup.py
+2025-10-22 21:28:06,725 - INFO - Found required package: streamlit
+2025-10-22 21:28:07,262 - INFO - Found required package: openai
+2025-10-22 21:28:07,262 - INFO - Found required package: pandas
+2025-10-22 21:28:07,263 - ERROR - Missing required package: python-dotenv
+2025-10-22 21:28:07,263 - INFO - Found required package: logging
+2025-10-22 21:28:08,395 - INFO - Streamlit is installed: Streamlit, version 1.28.0
+2025-10-22 21:28:08,395 - INFO - === Verification Summary ===
+2025-10-22 21:28:08,395 - INFO - Python version: OK
+2025-10-22 21:28:08,395 - INFO - Required files: OK
+2025-10-22 21:28:08,395 - INFO - Dependencies: FAILED
+2025-10-22 21:28:08,395 - INFO - Streamlit: OK
+2025-10-22 21:28:08,395 - INFO - Overall status: FAILED
+2025-10-22 21:28:29,646 - INFO - Starting AI Assistant application verification
+2025-10-22 21:28:29,646 - INFO - Python version 3.12.4 is compatible
+2025-10-22 21:28:29,646 - INFO - Found required file: main.py
+2025-10-22 21:28:29,648 - INFO - Found required file: requirements.txt
+2025-10-22 21:28:29,648 - INFO - Found required file: README.md
+2025-10-22 21:28:29,648 - INFO - Found required file: .env
+2025-10-22 21:28:29,648 - INFO - Found required file: test_app.py
+2025-10-22 21:28:29,648 - INFO - Found required file: azure-deploy.yaml
+2025-10-22 21:28:29,648 - INFO - Found required file: Dockerfile
+2025-10-22 21:28:29,648 - INFO - Found required file: .dockerignore
+2025-10-22 21:28:29,648 - INFO - Found required file: run_app.py
+2025-10-22 21:28:29,648 - INFO - Found required file: verify_setup.py
+2025-10-22 21:28:30,398 - INFO - Found required package: streamlit
+2025-10-22 21:28:30,762 - INFO - Found required package: openai
+2025-10-22 21:28:30,762 - INFO - Found required package: pandas
+2025-10-22 21:28:30,765 - INFO - Found required package: dotenv
+2025-10-22 21:28:30,765 - INFO - Found required package: logging
+2025-10-22 21:28:31,681 - INFO - Streamlit is installed: Streamlit, version 1.28.0
+2025-10-22 21:28:31,681 - INFO - === Verification Summary ===
+2025-10-22 21:28:31,682 - INFO - Python version: OK
+2025-10-22 21:28:31,682 - INFO - Required files: OK
+2025-10-22 21:28:31,682 - INFO - Dependencies: OK
+2025-10-22 21:28:31,682 - INFO - Streamlit: OK
+2025-10-22 21:28:31,682 - INFO - Overall status: PASSED
