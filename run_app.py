@@ -10,7 +10,13 @@ import subprocess
 import logging
 
 def setup_logging():
-    """Set up basic logging configuration."""
+    """
+    Set up basic logging configuration.
+    
+    This function configures the logging system to write to both a file
+    and the console, which is useful for debugging and monitoring the
+    application's behavior.
+    """
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -22,7 +28,13 @@ def setup_logging():
     return logging.getLogger(__name__)
 
 def check_dependencies():
-    """Check if required dependencies are installed."""
+    """
+    Check if required dependencies are installed.
+    
+    This function verifies that all required Python packages are available
+    before attempting to run the application. This helps prevent runtime
+    errors due to missing dependencies.
+    """
     try:
         import streamlit
         import openai
@@ -34,13 +46,25 @@ def check_dependencies():
         return False
 
 def load_environment():
-    """Load environment variables from .env file."""
+    """
+    Load environment variables from .env file.
+    
+    This function loads environment variables from the .env file in the
+    project root directory, which is useful for configuration and
+    sensitive information like API keys.
+    """
     from dotenv import load_dotenv
     load_dotenv()
     logger.info("Environment variables loaded")
 
 def run_streamlit():
-    """Run the Streamlit application."""
+    """
+    Run the Streamlit application.
+    
+    This function starts the Streamlit development server with the main
+    application file. It handles common errors like Streamlit not being
+    installed or issues with running the application.
+    """
     try:
         # Run streamlit with the main app file
         subprocess.run(["streamlit", "run", "main.py"], check=True)

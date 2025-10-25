@@ -1,3 +1,8 @@
+"""
+Test suite for the AI Assistant application.
+This file tests the main functionalities of the refactored AI Assistant web app.
+"""
+
 import streamlit as st
 import sys
 import os
@@ -7,9 +12,15 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import the main app functions
 import main
+from frontend import interface
 
 def test_app():
-    """Test the main functionalities of the app"""
+    """
+    Test the main functionalities of the app.
+    
+    This function runs a series of tests to verify that the application
+    components are working correctly after refactoring.
+    """
     st.title("AI Assistant App - Test Suite")
     
     st.write("This test suite verifies the main functionalities of the AI Assistant web app.")
@@ -38,18 +49,15 @@ def test_app():
     except Exception as e:
         st.error(f"✗ Error loading environment variables: {e}")
     
-    # Test 3: Check if mock data is available
-    st.subheader("Test 3: Mock Data Availability Test")
+    # Test 3: Check if frontend modules are available
+    st.subheader("Test 3: Frontend Modules Availability Test")
     try:
-        # Check if MOCK_DATA exists in main module
-        if hasattr(main, 'MOCK_DATA'):
-            mock_data = main.MOCK_DATA
-            st.success("✓ Mock data is available")
-            st.json(mock_data)
-        else:
-            st.error("✗ MOCK_DATA not found in main module")
+        # Check if frontend modules can be imported
+        from frontend.login import login_page
+        from frontend.interface import render_sidebar, render_chat_interface
+        st.success("✓ All frontend modules imported successfully")
     except Exception as e:
-        st.error(f"✗ Error accessing mock data: {e}")
+        st.error(f"✗ Error importing frontend modules: {e}")
     
     # Test 4: Check if session state variables are initialized
     st.subheader("Test 4: Session State Initialization Test")

@@ -10,7 +10,13 @@ import subprocess
 import logging
 
 def setup_logging():
-    """Set up basic logging configuration."""
+    """
+    Set up basic logging configuration.
+    
+    This function configures the logging system to write to both a file
+    and the console, which is useful for debugging and monitoring the
+    verification process.
+    """
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
@@ -22,7 +28,13 @@ def setup_logging():
     return logging.getLogger(__name__)
 
 def check_required_files():
-    """Check if all required files are present."""
+    """
+    Check if all required files are present.
+    
+    This function verifies that all necessary files for the application
+    are present in the project directory, including the new frontend
+    directory and its files.
+    """
     required_files = [
         "main.py",
         "requirements.txt",
@@ -33,7 +45,9 @@ def check_required_files():
         "Dockerfile",
         ".dockerignore",
         "run_app.py",
-        "verify_setup.py"
+        "verify_setup.py",
+        "frontend/login.py",
+        "frontend/interface.py"
     ]
     
     missing_files = []
@@ -47,7 +61,12 @@ def check_required_files():
     return len(missing_files) == 0
 
 def check_dependencies():
-    """Check if required dependencies are installed."""
+    """
+    Check if required dependencies are installed.
+    
+    This function verifies that all required Python packages are available
+    for the application to run properly.
+    """
     required_packages = [
         "streamlit",
         "openai",
@@ -68,7 +87,12 @@ def check_dependencies():
     return len(missing_packages) == 0
 
 def check_python_version():
-    """Check if Python version is compatible."""
+    """
+    Check if Python version is compatible.
+    
+    This function ensures that the Python version meets the minimum
+    requirements for the application (Python 3.7+).
+    """
     version_info = sys.version_info
     if version_info.major >= 3 and version_info.minor >= 7:
         logger.info(f"Python version {version_info.major}.{version_info.minor}.{version_info.micro} is compatible")
@@ -78,7 +102,12 @@ def check_python_version():
         return False
 
 def check_streamlit():
-    """Check if Streamlit is installed and working."""
+    """
+    Check if Streamlit is installed and working.
+    
+    This function verifies that Streamlit is properly installed and
+    can be executed, which is essential for running the application.
+    """
     try:
         result = subprocess.run(["streamlit", "--version"], capture_output=True, text=True, check=True)
         logger.info(f"Streamlit is installed: {result.stdout.strip()}")
@@ -88,7 +117,12 @@ def check_streamlit():
         return False
 
 def main():
-    """Main verification function."""
+    """
+    Main verification function.
+    
+    This function orchestrates the verification process by running all
+    checks and providing a summary of the results.
+    """
     logger.info("Starting AI Assistant application verification")
     
     # Check Python version
